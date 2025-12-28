@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Oman-inspired Palette: Deep Royal Blues and Golden Sands */
+  --background: 210 20% 98%;    /* Off-white */
+  --foreground: 222 47% 11%;    /* Deep Navy */
+  
+  --primary: 217 33% 17%;       /* Midnight Blue */
+  --primary-foreground: 45 29% 97%; /* Off-white text */
+  
+  --secondary: 43 74% 49%;      /* Oman Gold/Sand */
+  --secondary-foreground: 217 33% 17%;
+  
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  
+  --accent: 43 74% 49%;         /* Gold accent */
+  --accent-foreground: 222 47% 11%;
+  
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 217 33% 17%;
+  
+  --radius: 0.75rem;
+}
+
+@layer base {
+  html {
+    direction: rtl; /* Critical for Persian */
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Vazirmatn', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-primary;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: hsl(var(--secondary));
+  }
+  
+  .bg-gold {
+    background-color: hsl(var(--secondary));
+  }
+  
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+}
